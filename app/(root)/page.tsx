@@ -21,12 +21,12 @@ const Home = async () => {
 
                     <TotalBalanceBox
                         accounts={[]}
-                        totalBanks={1}
-                        totalCurrentBalance={1250.35}
+                        totalBanks={0}
+                        totalCurrentBalance={0}
                     />
                 </header>
 
-                RECENT TRANSACTIONS
+                ¡Gracias por confiar en nosotros! Pronto podrás usar la mejor herramienta financiera
             </div>
 
             <RightSidebar
