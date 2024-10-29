@@ -12,16 +12,16 @@ import Footer from '../Footer'
 const Sidebar = ({ user }: SiderbarProps) => {
     const pathname = usePathname();
     return (
-        
+
         <section className='sidebar'>
             <nav className='flex flex-col gap-4'>
                 <Link href="/" className='mb-12 cursor-pointer flex items-center gap-2'>
                     <Image
                         src="/icons/logo.svg"
-                        width={34}
-                        height={34}
+                        width={90}
+                        height={90}
                         alt="Logo"
-                        className='size-[24px] max-xl:size-14'
+                        className='rounded-full'
                     />
 
                     <h1 className='sidebar-logo'>Coinly</h1>
@@ -42,7 +42,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                                     })}
                                 />
                             </div>
-                            <p className={cn('sidebar-label',{'!text-white':isActive})}>
+                            <p className={cn('sidebar-label', { '!text-white': isActive })}>
                                 {item.label}
                             </p>
                         </Link>
