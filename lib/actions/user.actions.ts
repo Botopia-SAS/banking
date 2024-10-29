@@ -74,6 +74,7 @@ export const logoutAccount = async () => {
 
         await account.deleteSession('current');
     } catch (error) {
+        console.error("Error fwoiefjwoi usuario autenticado:", error);
         return null;
     }
 }

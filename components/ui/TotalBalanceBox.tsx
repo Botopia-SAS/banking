@@ -1,7 +1,7 @@
-import { formatAmount } from '@/lib/utils';
-import CountUp from 'react-countup'
+// import { formatAmount } from '@/lib/utils';
+// import CountUp from 'react-countup'
 import AnimatedCounter from './AnimatedCounter';
-import { Doughnut } from 'react-chartjs-2';
+// import { Doughnut } from 'react-chartjs-2';
 import DoughnutChart from './DoughnutChart';
 
 const TotalBalanceBox = ({
