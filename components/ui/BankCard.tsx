@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 
 //const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
-    const BankCard = ({ account, userName  }: CreditCardProps) => {
+const BankCard = ({ account, userName }: CreditCardProps) => {
     return (
         <div className='flex flex-col'>
             <Link href='/' className='bank-card'>
@@ -14,7 +14,7 @@ import Image from 'next/image'
                             {account.name || userName}
                         </h1>
                         <p className='font-imb-plex-serif font-black text-white'>
-                            {formatAmount(account.currentBalance)}
+                            {formatAmount(account.currentBalance || 0)}
                         </p>
                     </div>
                     <article className='flex flex-col gap-2'>
@@ -23,11 +23,11 @@ import Image from 'next/image'
                                 {userName}
                             </h1>
                             <h2 className='text-12 font-semibold text-white'>
-                            •• / ••
+                                •• / ••
                             </h2>
                         </div>
                         <p className='text-14 font-semibold tracking-[1.1px] text-white'>
-                        •••• •••• •••• <span className='text-16'>{1234}</span>
+                            •••• •••• •••• <span className='text-16'>{1234}</span>
                         </p>
                     </article>
                 </div>
