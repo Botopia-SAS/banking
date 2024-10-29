@@ -30,12 +30,42 @@ const Home = async () => {
             </div>
 
             <RightSidebar
-                user={loggedIn}
+                user={loggedIn || defaultUser} // Proporcionar un usuario por defecto si loggedIn es null
                 transactions={[]}
-                banks={[{ currentBalance: 123.50 }, { currentBalance: 500.50 }]}
+                banks={[
+                    {
+                        $id: '1',
+                        accountId: 'account-1',
+                        bankId: 'bank-1',
+                        accessToken: 'token-1',
+                        currentBalance: 123.50,
+                        officialName: 'Bank One', // Otras propiedades necesarias
+                        // Asegúrate de agregar cualquier otra propiedad requerida por Bank
+                    },
+                    {
+                        $id: '2',
+                        accountId: 'account-2',
+                        bankId: 'bank-2',
+                        accessToken: 'token-2',
+                        currentBalance: 500.50,
+                        officialName: 'Bank Two', // Otras propiedades necesarias
+                        // Asegúrate de agregar cualquier otra propiedad requerida por Bank
+                    }
+                ]}
+                
             />
         </section>
     )
 }
+
+// Define un usuario por defecto si es necesario
+const defaultUser = {
+    userId: '', // Asegúrate de incluir todas las propiedades requeridas en tu interfaz User
+    dwollaCustomerUrl: '',
+    dwollaCustomerId: '',
+    firstName: 'Guest',
+    lastName: '',
+    // Otras propiedades necesarias...
+};
 
 export default Home
