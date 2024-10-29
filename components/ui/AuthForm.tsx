@@ -38,7 +38,9 @@ import { signUp } from '@/lib/actions/user.actions';
 const AuthForm = ({ type }: { type: string }) => {
     const router = useRouter();
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState<User | null>(null);
+
+
     const [isLoading, setisLoading] = useState(false);
     
 
@@ -63,7 +65,11 @@ const AuthForm = ({ type }: { type: string }) => {
             if (type === 'sign-up') {
                 const newUser = await signUp(data);
                 console.log(newUser);
-                setUser(newUser);
+                if (newUser) {
+                    setUser(newUser); // No generics aquí
+                } else {
+                    console.error("Error al registrar el usuario");
+                }
             }
 
             if (type === 'sign-in') {
