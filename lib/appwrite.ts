@@ -7,7 +7,10 @@ export async function createSessionClient() {
         .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
         .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
+        console.log(client);
+
     const session = cookies().get("appwrite-session");
+
     if (!session || !session.value) {
         throw new Error("No session");
     }
@@ -31,10 +34,10 @@ export async function createAdminClient() {
     const client = new Client()
         .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
         .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!)
-        .setKey(process.env.NEXT_PUBLIC_APPWRITE_KEY!);
+        .setKey(process.env.NEXT_APPWRITE_KEY!);
     console.log("Endpoint:", process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT);
     console.log("Project ID:", process.env.NEXT_PUBLIC_APPWRITE_PROJECT);
-    console.log("API Key:", process.env.NEXT_PUBLIC_APPWRITE_KEY);
+    console.log("API Key:", process.env.NEXT_APPWRITE_KEY);
 
 
     return {

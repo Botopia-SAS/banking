@@ -25,7 +25,7 @@ import { authformSchema } from '@/lib/utils';
 import Custominput from '../Custominput';
 import { response } from 'express';
 import { useRouter } from 'next/navigation';
-import { signIn } from '@/lib/actions/user.actions';
+import { getLoggedInUser, signIn } from '@/lib/actions/user.actions';
 import { signUp } from '@/lib/actions/user.actions';
 
 
@@ -34,6 +34,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
     const [user, setUser] = useState(null)
     const [isLoading, setisLoading] = useState(false);
+    
 
     const formSchema = authformSchema(type);
 
@@ -60,13 +61,13 @@ const AuthForm = ({ type }: { type: string }) => {
             }
 
             if (type === 'sign-in') {
-                // const response = await signIn({
-                //     email: data.email,
-                //     password: data.password,
+                const response = await signIn({
+                    email: data.email,
+                    password: data.password,
 
-                // })
+                })
 
-                // if (response) router.push('/')
+                if (response) router.push('/')
 
             }
 
@@ -90,7 +91,7 @@ const AuthForm = ({ type }: { type: string }) => {
                         alt="Logo"
                     />
 
-                    <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Horizon</h1>
+                    <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Coinly</h1>
                 </Link>
 
                 <div className='flex flex-col gap-1 md:gap-3'>
